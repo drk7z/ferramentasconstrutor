@@ -67,8 +67,43 @@ Um sistema completo de gerenciamento de usuários desenvolvido em PHP com interf
 
 ## 📖 Como Usar
 
+### Como Executar Localmente
+
+Para executar o website localmente no Windows, siga estes passos:
+
+1. **Instale o PHP e MySQL** (se não tiver):
+   - Baixe e instale o XAMPP (https://www.apachefriends.org/) que inclui Apache, PHP e MySQL
+   - Ou instale PHP separadamente via Chocolatey: `choco install php`
+   - Instale MySQL via Chocolatey: `choco install mysql`
+
+2. **Configure o Banco de Dados**:
+   - Inicie o MySQL (se usando XAMPP, inicie o painel de controle)
+   - Crie o banco de dados: Abra o terminal e execute:
+     ```
+     mysql -u root -p
+     CREATE DATABASE login-teste;
+     exit;
+     ```
+   - Importe a tabela: No terminal, navegue até a pasta do projeto e execute:
+     ```
+     mysql -u root -p login-teste < login/database.sql
+     ```
+
+3. **Execute o Servidor PHP**:
+   - Abra o terminal no diretório raiz do projeto (c:/vscode)
+   - Execute o comando:
+     ```
+     php -S localhost:8000
+     ```
+   - O servidor estará rodando em http://localhost:8000
+
+4. **Acesse o Website**:
+   - Abra o navegador e vá para http://localhost:8000/index.php
+
+### Navegação no Sistema
+
 1. **Acesse o sistema**:
-   - Abra seu navegador e vá para `http://localhost/index.php`
+   - Abra seu navegador e vá para `http://localhost:8000/index.php`
 
 2. **Login**:
    - Se não estiver logado, será redirecionado para `login/login.php`
